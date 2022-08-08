@@ -75,18 +75,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # End of https://www.toptal.com/developers/gitignore/api/unity
-cgt_cardgameteam/Library/PackageCache/com.unity.visualscripting@1.7.8/.DS_Store
 .DS_Store
-/UserSettings/
-<<<<<<< Updated upstream
-/*DoNotShip
-=======
-<<<<<<< Updated upstream
-/ios/
-/*DoNotShip/
-Packages/packages-lock.json
-=======
 /*DoNotShip
 #test
->>>>>>> Stashed changes
->>>>>>> Stashed changes
