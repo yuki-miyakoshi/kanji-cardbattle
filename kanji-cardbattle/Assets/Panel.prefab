@@ -365,7 +365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIobj: {fileID: 6632434700125496412}
   roop: 1
-  countTime: 60
+  countTime: 5
 --- !u!1 &7924088593869665448
 GameObject:
   m_ObjectHideFlags: 0
