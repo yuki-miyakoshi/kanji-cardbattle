@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/00_splash-screen/scenes/splash-screen.unity
+    guid: 78650fd9bf2484017a2d80c53cda37a4
+  - enabled: 1
+    path: Assets/10_start/scenes/start.unity
+    guid: bcfdc1ac2c65344f6ab939d87d09b920
+  - enabled: 1
+    path: Assets/20_load/scenes/loading.unity
+    guid: a897ac60d84ac4b8d847a2a2421d9943
+  - enabled: 1
+    path: Assets/30_battle/scenes/battle-field.unity
+    guid: 182e3d0c0feeb844ca9d8c627acf27aa
   m_configObjects: {}
