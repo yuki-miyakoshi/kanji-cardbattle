@@ -7,6 +7,6 @@ public class SelectLevel : MonoBehaviour
 {
     public void OnClickStartButton()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("loading");
     }
 }
