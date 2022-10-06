@@ -4,17 +4,26 @@ using UnityEngine;
  
 public class CardController : MonoBehaviour
 {
-    public CardView view; // カードの見た目の処理
-    public CardModel model; // カードのデータを処理
- 
+    public TsukuriCardView tsukuriView; // カードの見た目の処理
+    public TsukuriCardModel tsukuriModel; // カードのデータを処理
+    public BushuCardView bushuView; // カードの見た目の処理
+    public BushuCardModel bushuModel; // カードのデータを処理
+
     private void Awake()
     {
-        view = GetComponent<CardView>();
+        tsukuriView = GetComponent<TsukuriCardView>();
+        bushuView = GetComponent<BushuCardView>();
     }
  
-    public void Init(int cardID) // カードを生成した時に呼ばれる関数
+    public void tsukuriInit(int cardID) // カードを生成した時に呼ばれる関数
     {
-        model = new CardModel(cardID); // カードデータを生成
-        view.Show(model); // 表示
+        tsukuriModel = new TsukuriCardModel(cardID); // カードデータを生成
+        tsukuriView.Show(tsukuriModel); // 表示
     }
+    public void bushuInit(int cardID) // カードを生成した時に呼ばれる関数
+    {
+        bushuModel = new BushuCardModel(cardID); // カードデータを生成
+        bushuView.Show(bushuModel); // 表示
+    }
+
 }

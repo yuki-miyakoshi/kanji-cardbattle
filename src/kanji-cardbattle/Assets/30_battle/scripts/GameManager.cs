@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
- 
+using UnityEngine.SceneManagement;
+
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] CardController cardPrefab;
-    [SerializeField] Transform playerHand, playerField, enemyField;
+    [SerializeField] CardController tsukuriCardPrefab;
+    [SerializeField] Transform cardField;
+    [SerializeField] CardController bushuCardPrefab;
+    [SerializeField] Transform themeField;
+    
  
     void Start()
     {
@@ -14,7 +18,14 @@ public class GameManager : MonoBehaviour
  
     void StartGame()
     {
-        CardController card = Instantiate(cardPrefab, playerHand);
-        card.Init(1);
+        for(int i = 0; i < 5; i++){
+        CardController tsukuricard = Instantiate(tsukuriCardPrefab, cardField);
+        tsukuricard.tsukuriInit(i);
+        }
+
+        CardController bushucard = Instantiate(bushuCardPrefab, themeField);
+        bushucard.bushuInit(0);
+
     }
+
 }

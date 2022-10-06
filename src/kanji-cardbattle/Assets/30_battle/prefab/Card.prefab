@@ -90,6 +90,8 @@ GameObject:
   - component: {fileID: 37178384671105090}
   - component: {fileID: 4493775802667825036}
   - component: {fileID: 5090416102318603063}
+  - component: {fileID: 505784905435103835}
+  - component: {fileID: -4969676779010095382}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -106,7 +108,7 @@ RectTransform:
   m_GameObject: {fileID: 37178384671105088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.125, y: 0.125, z: 0.125}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 37178383721306866}
@@ -157,6 +159,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 1
   m_AspectRatio: 0.996936
+--- !u!114 &505784905435103835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37178384671105088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991102dfcebcf468b8e7cbbe5fe6f4cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  view: {fileID: 0}
+--- !u!114 &-4969676779010095382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37178384671105088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada6a628e37c842d0a08edc7ecec22c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tsukuriText: {fileID: 7089351407117303475}
+  powerText: {fileID: 7566298965053369154}
 --- !u!1 &37178385002455194
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +198,7 @@ GameObject:
   - component: {fileID: 37178385002455173}
   - component: {fileID: 37178385002455172}
   m_Layer: 5
-  m_Name: CostPanel
+  m_Name: PowerPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -186,7 +215,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2037884307911863854}
   m_Father: {fileID: 1675955991750597821}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -453,7 +483,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 200
+    m_FontSize: 150
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
@@ -464,7 +494,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u8089"
+  m_Text: 
 --- !u!1 &7389844008678369947
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,7 +527,6 @@ RectTransform:
   m_Children:
   - {fileID: 2070331906000883559}
   - {fileID: 37178385002455195}
-  - {fileID: 2037884307911863854}
   m_Father: {fileID: 37178384671105089}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -574,8 +603,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1675955991750597821}
-  m_RootOrder: 2
+  m_Father: {fileID: 37178385002455195}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -612,7 +641,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 60
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
@@ -623,7 +652,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u4F0D"
+  m_Text: 
 --- !u!1 &7946483519518785849
 GameObject:
   m_ObjectHideFlags: 0
