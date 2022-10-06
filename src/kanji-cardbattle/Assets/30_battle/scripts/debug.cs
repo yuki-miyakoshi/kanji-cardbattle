@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class debug_end : MonoBehaviour
+public class debug : MonoBehaviour
 {
-    public void OnClickStartButton()
+    public void OnClickEndButton()
     {
         SceneManager.LoadScene("ResultsScene");
     }
+
+    public void OnClickReloadButton()
+    {
+        SceneManager.LoadScene("battle-field");
+    }
+
 }
