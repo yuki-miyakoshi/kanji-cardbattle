@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] Transform cardField;
     [SerializeField] CardController bushuCardPrefab;
     [SerializeField] Transform themeField;
-    
  
     void Start()
     {
@@ -18,6 +17,8 @@ public class GameManager : MonoBehaviour
  
     void StartGame()
     {
+        ReadKanjiCSV.instance.Initialized();
+
         for(int i = 0; i < 5; i++){
         CardController tsukuricard = Instantiate(tsukuriCardPrefab, cardField);
         tsukuricard.tsukuriInit(i);
