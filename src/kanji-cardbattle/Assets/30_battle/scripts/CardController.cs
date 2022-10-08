@@ -15,10 +15,11 @@ public class CardController : MonoBehaviour
         bushuView = GetComponent<BushuCardView>();
     }
  
-    public void tsukuriInit(int cardID) // カードを生成した時に呼ばれる関数
+    public int tsukuriInit(int cardID) // カードを生成した時に呼ばれる関数
     {
         tsukuriModel = new TsukuriCardModel(cardID); // カードデータを生成
         tsukuriView.Show(tsukuriModel); // 表示
+        return tsukuriModel.Tsukuri_unique;
     }
     public void bushuInit(int cardID) // カードを生成した時に呼ばれる関数
     {

@@ -171,7 +171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991102dfcebcf468b8e7cbbe5fe6f4cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  view: {fileID: 0}
+  tsukuriView: {fileID: 0}
+  bushuView: {fileID: 0}
 --- !u!114 &-4969676779010095382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,8 +185,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ada6a628e37c842d0a08edc7ecec22c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tsukuriText: {fileID: 7089351407117303475}
-  powerText: {fileID: 7566298965053369154}
+  TsukuriText: {fileID: 7089351407117303475}
+  PowerText: {fileID: 7566298965053369154}
+  count: 0
+  tsukuri_unique: 0
+  power: 0
 --- !u!1 &37178385002455194
 GameObject:
   m_ObjectHideFlags: 0
