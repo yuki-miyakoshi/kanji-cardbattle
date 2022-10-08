@@ -6,13 +6,20 @@ using System.IO;
  
 public class TsukuriCardView : MonoBehaviour
 {
-    [SerializeField] Text tsukuriText, powerText;
+    [SerializeField] public Text TsukuriText, PowerText;
+    public int CardID;
+    public int Tsukuri_unique;
+    public int Power;
+
 
     public void Show(TsukuriCardModel cardModel) // cardModelのデータ取得と反映
     {
-        
-        tsukuriText.text = ReadKanjiCSV.instance.getKanjiCSV(cardModel.tsukuri_unique,5);
-        powerText.text = cardModel.power.ToString();
+        CardID = cardModel.CardID;
+        Tsukuri_unique = cardModel.Tsukuri_unique;
+        Power = cardModel.Power;
+
+        TsukuriText.text = cardModel.TsukuriText;
+        PowerText.text = cardModel.Power.ToString();
 
     }
 }

@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Transform cardField;
     [SerializeField] CardController bushuCardPrefab;
     [SerializeField] Transform themeField;
+
+    public int tsukuri_unique;
  
     void Start()
     {
@@ -21,7 +23,8 @@ public class GameManager : MonoBehaviour
 
         for(int i = 0; i < 5; i++){
         CardController tsukuricard = Instantiate(tsukuriCardPrefab, cardField);
-        tsukuricard.tsukuriInit(i);
+        tsukuri_unique = tsukuricard.tsukuriInit(i);
+        tsukuricard.name = tsukuri_unique.ToString();
         }
 
         CardController bushucard = Instantiate(bushuCardPrefab, themeField);
