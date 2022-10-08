@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
  
-public class ReadCSV : MonoBehaviour
+public class ReadKanjiCSV : MonoBehaviour
 {
 
-    public static ReadCSV instance;
+    public static ReadKanjiCSV instance;
    
     public void Awake()
     {
@@ -32,7 +32,7 @@ public class ReadCSV : MonoBehaviour
         }
     }
 
-    public string getCSV(int row,int col){
+    public string getKanjiCSV(int row,int col){
         return csvDatas[row][col];
     }
 }
