@@ -6,7 +6,7 @@ using System;
 public class TsukuriCardModel
 {
     public int CardID;
-    public int Tsukuri_unique;
+    public string Tsukuri_unique;
     public int Power;
     public int randam;
     public string TsukuriText;
@@ -14,11 +14,14 @@ public class TsukuriCardModel
     public TsukuriCardModel(int cardID)
     {
         randam = UnityEngine.Random.Range(1, 300);
-        Tsukuri_unique = int.Parse(ReadKanjiCSV.instance.getKanjiCSV((randam),4));
-        while( GameObject.Find(Tsukuri_unique.ToString()) != null ){
+        Tsukuri_unique = ReadKanjiCSV.instance.getKanjiCSV((randam),4);
+
+        //作りが被っていたら変更します。
+        while( GameObject.Find(Tsukuri_unique) != null ){
             randam = UnityEngine.Random.Range(1, 300);
-            Tsukuri_unique = int.Parse(ReadKanjiCSV.instance.getKanjiCSV(randam,4));
+            Tsukuri_unique = ReadKanjiCSV.instance.getKanjiCSV(randam,4);
         }
+
         TsukuriText = ReadKanjiCSV.instance.getKanjiCSV(randam,5);
         CardID = cardID;
         Power = UnityEngine.Random.Range(1, 5);
