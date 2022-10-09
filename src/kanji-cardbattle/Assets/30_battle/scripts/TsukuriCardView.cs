@@ -8,7 +8,7 @@ public class TsukuriCardView : MonoBehaviour
 {
     [SerializeField] public Text TsukuriText, PowerText;
     public int CardID;
-    public int Tsukuri_unique;
+    public string Tsukuri_unique;
     public int Power;
 
 
