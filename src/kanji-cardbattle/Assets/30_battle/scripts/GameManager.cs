@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] CardController bushuCardPrefab;
     [SerializeField] Transform themeField;
 
-    public string tsukuri_unique;
+    public string TsukuriUnique;
+    public string BushuUnique;
  
     void Start()
     {
@@ -22,13 +23,14 @@ public class GameManager : MonoBehaviour
         ReadKanjiCSV.instance.Initialized();
 
         for(int i = 0; i < 5; i++){
-        CardController tsukuricard = Instantiate(tsukuriCardPrefab, cardField);
-        tsukuri_unique = tsukuricard.tsukuriInit(i);
-        tsukuricard.name = tsukuri_unique;
+        CardController tsukuriCard = Instantiate(tsukuriCardPrefab, cardField);
+        TsukuriUnique = tsukuriCard.TsukuriInit(i);
+        tsukuriCard.name = TsukuriUnique;
         }
 
-        CardController bushucard = Instantiate(bushuCardPrefab, themeField);
-        bushucard.bushuInit(0);
+        CardController bushuCard = Instantiate(bushuCardPrefab, themeField);
+        BushuUnique = bushuCard.BushuInit(0);
+        bushuCard.name = BushuUnique;
 
     }
 
