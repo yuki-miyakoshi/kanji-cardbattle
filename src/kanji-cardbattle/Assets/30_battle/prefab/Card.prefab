@@ -185,11 +185,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ada6a628e37c842d0a08edc7ecec22c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TsukuriText: {fileID: 7089351407117303475}
-  PowerText: {fileID: 7566298965053369154}
-  count: 0
-  tsukuri_unique: 0
-  power: 0
+  tsukuriText: {fileID: 7089351407117303475}
+  powerText: {fileID: 7566298965053369154}
+  CardID: 0
+  TsukuriUnique: 
+  Power: 0
 --- !u!1 &37178385002455194
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +431,7 @@ GameObject:
   - component: {fileID: 2006527892114678849}
   - component: {fileID: 7089351407117303475}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: TsukuriText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

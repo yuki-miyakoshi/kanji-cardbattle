@@ -158,7 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIobj: {fileID: 7015764310499568755}
   isStart: 1
-  countTime: 30
+  countTime: 10
 --- !u!114 &1466378574668322275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bushuText: {fileID: 8410067830761150857}
+  CardID: 0
+  BushuUnique: 
 --- !u!1 &1880015068590911162
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +276,7 @@ GameObject:
   - component: {fileID: 940233992374420347}
   - component: {fileID: 8410067830761150857}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: BushuText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
