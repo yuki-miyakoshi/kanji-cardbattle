@@ -53,4 +53,8 @@ public class ReadKanjiCSV : MonoBehaviour
         return TsukuriUniqueData;
        
     }
+
+    public int getListCount(){
+        return ListCount;
+    }
 }
