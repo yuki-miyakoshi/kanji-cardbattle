@@ -23,6 +23,7 @@ public class TsukuriCardView : MonoBehaviour
     }
 
     public void OnClickCombineCard(){
+        Debug.Log("タップ");
         GameObject target1 = GameObject.Find("Bushu");
         if( target1.GetComponent<BushuCardView>().MyTsukuriUnique.Contains(TsukuriUnique) == true){
             Debug.Log("ヒット！");
