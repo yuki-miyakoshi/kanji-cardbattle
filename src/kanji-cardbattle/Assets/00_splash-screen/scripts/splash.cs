@@ -7,7 +7,7 @@ public class splash: MonoBehaviour {
  
     // Use this for initialization
     void Start () {
-        Invoke("ChangeScene", 1.5f);
+        Invoke("ChangeScene", 3.0f);
     }
     
     // Update is called once per frame
