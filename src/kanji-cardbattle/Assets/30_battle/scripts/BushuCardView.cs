@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.IO;
  
 public class BushuCardView : MonoBehaviour
 {
-    [SerializeField] Text bushuText;
+    [SerializeField] public Text bushuText;
     public int CardID;
     public string BushuUnique;
     public List<string> MyTsukuriUnique;

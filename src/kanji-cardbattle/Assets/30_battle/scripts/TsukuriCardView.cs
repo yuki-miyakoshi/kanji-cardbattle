@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.IO;
- 
+using System.Linq;
+
 public class TsukuriCardView : MonoBehaviour
 {
     [SerializeField] Text tsukuriText, powerText;
@@ -20,5 +20,22 @@ public class TsukuriCardView : MonoBehaviour
 
         tsukuriText.text = cardModel.TsukuriText;
         powerText.text = cardModel.Power.ToString();
+    }
+
+    public void OnClickCombineCard(){
+        GameObject target1 = GameObject.Find("Bushu");
+        if( target1.GetComponent<BushuCardView>().MyTsukuriUnique.Contains(TsukuriUnique) == true){
+            Debug.Log("ヒット！");
+            for(int i = 0; i < ReadKanjiCSV.instance.getListCount(); i++){
+                if(ReadKanjiCSV.instance.getKanjiCSV(i,2) == target1.GetComponent<BushuCardView>().BushuUnique){
+                    if(ReadKanjiCSV.instance.getKanjiCSV(i,4) == TsukuriUnique){
+                        target1.GetComponent<BushuCardView>().bushuText.text = ReadKanjiCSV.instance.getKanjiCSV(i,1);
+                    }
+                }
+            }
+            
+        }
+        
+        Debug.Log(target1.GetComponent<BushuCardView>().MyTsukuriUnique);
     }
 }

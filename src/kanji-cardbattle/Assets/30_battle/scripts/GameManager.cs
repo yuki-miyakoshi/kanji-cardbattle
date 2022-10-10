@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 
         CardController bushuCard = Instantiate(bushuCardPrefab, themeField);
         BushuUnique = bushuCard.BushuInit(0);
-        bushuCard.name = BushuUnique;
+        bushuCard.name = "Bushu";
 
     }
 
