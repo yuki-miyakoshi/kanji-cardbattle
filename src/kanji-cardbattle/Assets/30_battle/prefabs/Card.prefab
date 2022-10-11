@@ -142,8 +142,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIobj: {fileID: 3976743266066463771}
-  isStart: 1
-  countTime: 10
+  doStart: 1
+  countTime: 5
+  isBushu: 0
 --- !u!114 &5090416102318603063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tsukuriView: {fileID: 0}
   bushuView: {fileID: 0}
+  kanjiView: {fileID: 0}
 --- !u!114 &-4969676779010095382
 MonoBehaviour:
   m_ObjectHideFlags: 0
