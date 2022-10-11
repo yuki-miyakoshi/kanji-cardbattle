@@ -9,9 +9,27 @@ public class GameManager : MonoBehaviour
     [SerializeField] Transform cardField;
     [SerializeField] CardController bushuCardPrefab;
     [SerializeField] Transform themeField;
+    [SerializeField] CardController kanjiCardPrefab;
+    [SerializeField] Transform kanjiField;
+
+    public static GameManager instance;
 
     public string TsukuriUnique;
     public string BushuUnique;
+    public int doNextTsukuri;
+    public bool doNextBushu,doSetKanji;
+    public int countTsukuriID = 0,countBushuID = 0;
+
+    public int KanjiID = 0,KanjiPower = 0;
+    public string KanjiUnique,KanjiKanji;
+
+    public void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
  
     void Start()
     {
@@ -24,14 +42,42 @@ public class GameManager : MonoBehaviour
 
         for(int i = 0; i < 5; i++){
         CardController tsukuriCard = Instantiate(tsukuriCardPrefab, cardField);
-        TsukuriUnique = tsukuriCard.TsukuriInit(i);
-        tsukuriCard.name = TsukuriUnique;
+        tsukuriCard.TsukuriInit(i);
+        tsukuriCard.name = tsukuriCard.GetComponent<TsukuriCardView>().TsukuriUnique;
+        countTsukuriID++;
         }
 
         CardController bushuCard = Instantiate(bushuCardPrefab, themeField);
-        BushuUnique = bushuCard.BushuInit(0);
+        bushuCard.BushuInit(0);
         bushuCard.name = "Bushu";
+        countBushuID++;
 
+    }
+
+    void Update(){
+        if(doNextTsukuri > 0){
+            CardController tsukuriCard = Instantiate(tsukuriCardPrefab, cardField);
+            tsukuriCard.TsukuriInit(countTsukuriID);
+            tsukuriCard.name = tsukuriCard.GetComponent<TsukuriCardView>().TsukuriUnique;
+            countTsukuriID++;
+            doNextTsukuri--;
+        }
+
+        if(doNextBushu == true){
+            CardController bushuCard = Instantiate(bushuCardPrefab, themeField);
+            bushuCard.BushuInit(countBushuID);
+            bushuCard.name = "Bushu";
+            countBushuID++;
+            doNextBushu = false;
+        }
+
+        if(doSetKanji == true){
+            CardController kanjiCard = Instantiate(kanjiCardPrefab, kanjiField);
+            kanjiCard.KanjiInit(KanjiID,KanjiPower,KanjiUnique,KanjiKanji);
+            kanjiCard.name = "Kanji";
+            KanjiID++;
+            doSetKanji = false;
+        }
     }
 
 }
