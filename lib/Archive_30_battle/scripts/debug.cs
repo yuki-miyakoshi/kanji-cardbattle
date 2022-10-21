@@ -12,7 +12,7 @@ public class debug : MonoBehaviour
 
     public void OnClickReloadButton()
     {
-        SceneManager.LoadScene("battle");
+        SceneManager.LoadScene("battle-field");
     }
 
 }

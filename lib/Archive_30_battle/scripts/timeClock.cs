@@ -21,7 +21,7 @@ public class timeClock : MonoBehaviour {
       }
       if( isBushu ){
         GameManager.instance.doNextBushu = true;
-        // GameObject.Find("Kanji").SetActive (false);
+        GameObject.Find("Kanji").SetActive (false);
       }
       
     }

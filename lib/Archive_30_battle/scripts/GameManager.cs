@@ -71,13 +71,13 @@ public class GameManager : MonoBehaviour
             doNextBushu = false;
         }
 
-        // if(doSetKanji == true){
-        //     CardController kanjiCard = Instantiate(kanjiCardPrefab, kanjiField);
-        //     kanjiCard.KanjiInit(KanjiID,KanjiPower,KanjiUnique,KanjiKanji);
-        //     kanjiCard.name = "Kanji";
-        //     KanjiID++;
-        //     doSetKanji = false;
-        // }
+        if(doSetKanji == true){
+            CardController kanjiCard = Instantiate(kanjiCardPrefab, kanjiField);
+            kanjiCard.KanjiInit(KanjiID,KanjiPower,KanjiUnique,KanjiKanji);
+            kanjiCard.name = "Kanji";
+            KanjiID++;
+            doSetKanji = false;
+        }
     }
 
 }
