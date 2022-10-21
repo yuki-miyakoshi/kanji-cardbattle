@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/20_load/scene/loading.unity
     guid: a897ac60d84ac4b8d847a2a2421d9943
   - enabled: 1
-    path: Assets/30_battle/scene/battle-field-new.unity
+    path: Assets/30_battle/scene/battle.unity
     guid: 182e3d0c0feeb844ca9d8c627acf27aa
   - enabled: 1
     path: Assets/40_result/scene/ResultsScene.unity
