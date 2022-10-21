@@ -55,13 +55,13 @@ public class GameManager : MonoBehaviour
     }
 
     void Update(){
-        if(doNextTsukuri > 0){
-            CardController tsukuriCard = Instantiate(tsukuriCardPrefab, cardField);
-            tsukuriCard.TsukuriInit(countTsukuriID);
-            tsukuriCard.name = tsukuriCard.GetComponent<TsukuriCardView>().TsukuriUnique;
-            countTsukuriID++;
-            doNextTsukuri--;
-        }
+        // if(doNextTsukuri > 0){
+        //     // CardController tsukuriCard = Instantiate(tsukuriCardPrefab, cardField);
+        //     // tsukuriCard.TsukuriInit(countTsukuriID);
+        //     GameObject.Find("Bushu").name = tsukuriCard.GetComponent<TsukuriCardView>().TsukuriUnique;
+        //     countTsukuriID++;
+        //     doNextTsukuri--;
+        // }
 
         if(doNextBushu == true){
             CardController bushuCard = Instantiate(bushuCardPrefab, themeField);

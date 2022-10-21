@@ -31,10 +31,10 @@ public class CardController : MonoBehaviour
         bushuView.Show(bushuModel); // 表示
     }
 
-    public void KanjiInit(int KanjiID,int KanjiPower,string KanjiUnique,string KanjiKanji) // カードを生成した時に呼ばれる関数
-    {
-        kanjiModel = new KanjiCardModel(KanjiID,KanjiPower,KanjiUnique,KanjiKanji); // カードデータを生成
-        kanjiView.Show(kanjiModel); // 表示
-    }
+    // public void KanjiInit(int KanjiID,int KanjiPower,string KanjiUnique,string KanjiKanji) // カードを生成した時に呼ばれる関数
+    // {
+    //     kanjiModel = new KanjiCardModel(KanjiID,KanjiPower,KanjiUnique,KanjiKanji); // カードデータを生成
+    //     kanjiView.Show(kanjiModel); // 表示
+    // }
 
 }
