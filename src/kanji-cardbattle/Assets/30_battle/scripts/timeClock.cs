@@ -15,13 +15,22 @@ public class timeClock : MonoBehaviour {
     }
 
     if( UIobj.fillAmount == 0){
-      gameObject.SetActive (false);
+      // gameObject.SetActive (false);
       if( !isBushu ){
-        GameManager.instance.doNextTsukuri++;
+        // GameManager.instance.doNextTsukuri++;
+        // if(doNextTsukuri > 0){
+            GetComponent<CardController>().TsukuriInit(GameManager.instance.countTsukuriID);
+            // CardController tsukuriCard = Instantiate(tsukuriCardPrefab, cardField);
+            // tsukuriCard.TsukuriInit(countTsukuriID);
+            // GameObject.Find(GetComponent<TsukuriCardView>().TsukuriUnique).name = tsukuriCard.GetComponent<TsukuriCardView>().TsukuriUnique;
+            GameManager.instance.countTsukuriID++;
+            UIobj.fillAmount = 5.0f;
+            // doNextTsukuri--;
+        // }
       }
       if( isBushu ){
         GameManager.instance.doNextBushu = true;
-        // GameObject.Find("Kanji").SetActive (false);
+        gameObject.SetActive (false);
       }
       
     }
