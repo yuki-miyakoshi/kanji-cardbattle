@@ -24,6 +24,12 @@ public class GameManager : MonoBehaviour
     public int KanjiID = 0,KanjiPower = 0;
     public string KanjiUnique,KanjiKanji;
 
+    private bool beingMeasured; // 計測中であることを表す変数
+    public string timerText;
+    private float start; // 計測の開始時間を格納する変数
+    private float elapsedTime; // 経過時間を格納する変数
+ 
+
     public void Awake()
     {
         if(instance == null)
@@ -83,6 +89,14 @@ public class GameManager : MonoBehaviour
         //     KanjiID++;
         //     doSetKanji = false;
         // }
+
+        if (beingMeasured){
+            beingMeasured = !beingMeasured;
+            start = Time.time; // 開始時間を格納
+        }else{
+            elapsedTime = Time.time - start; // 経過時間を格納
+            timerText = elapsedTime.ToString("0");
+        }
     }
 
 }
