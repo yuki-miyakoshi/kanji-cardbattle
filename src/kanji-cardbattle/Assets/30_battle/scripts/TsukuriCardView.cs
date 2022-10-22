@@ -40,6 +40,7 @@ public class TsukuriCardView : MonoBehaviour
     public void OnClickCombineCard(){
 
         if(inactive == false){
+            // GameObject.Find("GameObject").GetComponent<GameManager>().isMoving = true;
 
             CardPos = transform.position;
             MyField = GameObject.Find("myfield").transform.position;
@@ -83,10 +84,13 @@ public class TsukuriCardView : MonoBehaviour
                 //         }
                 //     }
                 // }
+                    // GameObject.Find("GameObject").GetComponent<GameManager>().isMoving = false;
                     SetNextTsukuri();
                 }else{
                     rb.velocity = new Vector2( 1,1);
                     rb.gravityScale = 1.0f;
+
+                    // GameObject.Find("GameObject").GetComponent<GameManager>().isMoving = false;
 
                     StartCoroutine(DelayMethod(10.0f, () =>{
                         SetNextTsukuri();
@@ -94,10 +98,8 @@ public class TsukuriCardView : MonoBehaviour
                 }
 
             }));
-        
-        // Debug.Log(target1.GetComponent<BushuCardView>().MyTsukuriUnique);
-    }
         }
+    }
 
     private void SetNextTsukuri(){
         GetComponent<CardController>().TsukuriInit(GameManager.instance.countTsukuriID);

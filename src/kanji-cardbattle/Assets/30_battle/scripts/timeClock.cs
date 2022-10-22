@@ -29,8 +29,10 @@ public class timeClock : MonoBehaviour {
         // }
       }
       if( isBushu ){
-        GameManager.instance.doNextBushu = true;
-        gameObject.SetActive (false);
+        // if(GameObject.Find("GameObject").GetComponent<GameManager>().isMoving){
+          GameManager.instance.doNextBushu = true;
+          gameObject.SetActive (false);
+        // }
       }
       
     }

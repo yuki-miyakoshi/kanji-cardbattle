@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     private float start; // 計測の開始時間を格納する変数
     private float elapsedTime; // 経過時間を格納する変数
  
+    // public bool isMoving = false;
 
     public void Awake()
     {
@@ -45,7 +46,10 @@ public class GameManager : MonoBehaviour
  
     void StartGame()
     {
-        ReadKanjiCSV.instance.Initialized();
+        CardController bushuCard = Instantiate(bushuCardPrefab, themeField);
+        bushuCard.BushuInit(0);
+        bushuCard.name = "Bushu";
+        countBushuID++;
 
         for(int i = 0; i < 5; i++){
         CardController tsukuriCard = Instantiate(tsukuriCardPrefab, cardField);
@@ -53,12 +57,6 @@ public class GameManager : MonoBehaviour
         tsukuriCard.name = tsukuriCard.GetComponent<TsukuriCardView>().TsukuriUnique;
         countTsukuriID++;
         }
-
-        CardController bushuCard = Instantiate(bushuCardPrefab, themeField);
-        bushuCard.BushuInit(0);
-        bushuCard.name = "Bushu";
-        countBushuID++;
-
     }
 
     void Update(){
