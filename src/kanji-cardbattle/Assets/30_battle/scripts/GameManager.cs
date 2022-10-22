@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -69,6 +70,10 @@ public class GameManager : MonoBehaviour
             bushuCard.name = "Bushu";
             countBushuID++;
             doNextBushu = false;
+        }
+
+        if( int.Parse( GameObject.Find("myscore").GetComponent<Text>().text ) > 9){
+            SceneManager.LoadScene("ResultsScene");
         }
 
         // if(doSetKanji == true){
