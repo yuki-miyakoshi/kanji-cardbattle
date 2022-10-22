@@ -13,8 +13,16 @@ public class TsukuriCardModel
 
     public TsukuriCardModel(int cardID)
     {
+
         Randam = UnityEngine.Random.Range(1, ReadKanjiCSV.instance.getListCount());
-        TsukuriUnique = ReadKanjiCSV.instance.getKanjiCSV((Randam),4);
+        if(UnityEngine.Random.Range(0,3) > 1){ // 1/3の確率で
+Debug.Log("確定演出");
+            int Length = GameObject.Find("Bushu").GetComponent<BushuCardView>().MyTsukuriUnique.Length-2;
+            TsukuriUnique = GameObject.Find("Bushu").GetComponent<BushuCardView>().MyTsukuriUnique[UnityEngine.Random.Range(0,Length)];
+        }else{
+            TsukuriUnique = ReadKanjiCSV.instance.getKanjiCSV((Randam),4);
+        }
+        
 
         //作りが被っていたら変更します。
         while( GameObject.Find(TsukuriUnique) != null ){
