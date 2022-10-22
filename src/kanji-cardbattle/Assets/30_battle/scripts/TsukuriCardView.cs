@@ -94,10 +94,8 @@ public class TsukuriCardView : MonoBehaviour
                 }
 
             }));
-        
-        // Debug.Log(target1.GetComponent<BushuCardView>().MyTsukuriUnique);
-    }
         }
+    }
 
     private void SetNextTsukuri(){
         GetComponent<CardController>().TsukuriInit(GameManager.instance.countTsukuriID);

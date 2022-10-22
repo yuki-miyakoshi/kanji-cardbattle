@@ -40,17 +40,18 @@ public class ReadKanjiCSV : MonoBehaviour
         return csvDatas[row][col];
     }
 
-    public List<string> getMyTsukuriUnique(string BushuUnique){
+    public string getMyTsukuriUnique(string BushuUnique){
 
-        List<string> TsukuriUniqueData = new List<string>();
+        // List<string> TsukuriUniqueData = new List<string>();
 
-        for(int i = 0 ; i < ListCount ; i++){
-            if(csvDatas[i][2] == BushuUnique){
-                TsukuriUniqueData.Add(csvDatas[i][4]);
-            }
-        }
-        Debug.Log(ListCount);
-        return TsukuriUniqueData;
+        // for(int i = 0 ; i < ListCount ; i++){
+        //     if(csvDatas[i][2] == BushuUnique){
+        //         TsukuriUniqueData.Add(csvDatas[i][4]);
+        //     }
+        // }
+        // Debug.Log(ListCount);
+
+        return csvDatas[csvDatas.IndexOf(BushuUnique)][4];
        
     }
 

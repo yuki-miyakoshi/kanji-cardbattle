@@ -8,7 +8,7 @@ public class BushuCardView : MonoBehaviour
     [SerializeField] public Text bushuText;
     public int CardID;
     public string BushuUnique;
-    public List<string> MyTsukuriUnique;
+    public string MyTsukuriUnique;
 
     public void Show(BushuCardModel cardModel) // cardModelのデータ取得と反映
     {

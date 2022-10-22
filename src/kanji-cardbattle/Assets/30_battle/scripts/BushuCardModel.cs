@@ -7,7 +7,7 @@ public class BushuCardModel
 {
     public int CardID;
     public int Randam;
-    public List<string> MyTsukuriUnique;
+    public string MyTsukuriUnique;
     public string BushuText;
     public string BushuUnique;
 

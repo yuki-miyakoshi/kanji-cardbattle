@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
  
     void StartGame()
     {
-        ReadKanjiCSV.instance.Initialized();
+        // ReadKanjiCSV.instance.Initialized();
 
         for(int i = 0; i < 5; i++){
         CardController tsukuriCard = Instantiate(tsukuriCardPrefab, cardField);
