@@ -15,6 +15,8 @@ public class TsukuriCardView : MonoBehaviour
     public float speed = 5.0f;
     private Rigidbody2D rb = null;
 
+    public bool inactive;
+
     void Start()
      {
          //コンポーネントのインスタンスを捕まえる
@@ -29,23 +31,33 @@ public class TsukuriCardView : MonoBehaviour
 
         tsukuriText.text = cardModel.TsukuriText;
         powerText.text = cardModel.Power.ToString();
+
+        inactive = false;
     }
 
     public void OnClickCombineCard(){
-        GetComponent<timeClock>().doStart = false;
+
+        if(inactive == false){
+
+            inactive = true;
+            GetComponent<timeClock>().doStart = false;
 Debug.Log("タップ");
-        Vector3 CardPos = transform.position;
-        Vector3 MyField = GameObject.Find("myfield").transform.position;
+            Vector3 CardPos = transform.position;
+            Vector3 MyField = GameObject.Find("myfield").transform.position;
 Debug.Log("座標"+CardPos.y);
-        rb.velocity = new Vector2( (MyField.x - CardPos.x ) * speed, (-CardPos.y)*speed);
-        GameObject target1 = GameObject.Find("Bushu");
+            rb.velocity = new Vector2( (MyField.x - CardPos.x ) * speed, (-CardPos.y)*speed);
+            GameObject target1 = GameObject.Find("Bushu");
 
-        StartCoroutine(DelayMethod(2.0f, () =>{
+            StartCoroutine(DelayMethod(2.0f, () =>{
 
-            if( target1.GetComponent<BushuCardView>().MyTsukuriUnique.Contains(TsukuriUnique) == true){
+                if( target1.GetComponent<BushuCardView>().MyTsukuriUnique.Contains(TsukuriUnique) == true){
 Debug.Log("ヒット！");
 
-                gameObject.SetActive (false);
+                    rb.velocity = new Vector2( 0,0);
+                    GameObject.Find("myscore").GetComponent<Text>().text = ( int.Parse(GameObject.Find("myscore").GetComponent<Text>().text) + Power ).ToString();
+
+
+                // gameObject.SetActive (false);
                 // GameManager.instance.doNextTsukuri++;
 
                 // rb.velocity = new Vector2( 0,0);
@@ -71,28 +83,36 @@ Debug.Log("ヒット！");
                 //         }
                 //     }
                 // }
-                
-            }else{
-                rb.velocity = new Vector2( 1,1);
-                rb.gravityScale = 1.0f;
-            }
+                    GetComponent<CardController>().TsukuriInit(GameManager.instance.countTsukuriID);
+                    GameManager.instance.countTsukuriID++;
+                    transform.position = CardPos;
+                    rb.velocity = new Vector2( 0,0);
+                    rb.gravityScale = 0.0f;
+                    gameObject.SetActive (true);
+                    GetComponent<timeClock>().UIobj.fillAmount = 5.0f;
+                    GetComponent<timeClock>().doStart = true;
+                }else{
+                    rb.velocity = new Vector2( 1,1);
+                    rb.gravityScale = 1.0f;
 
-            StartCoroutine(DelayMethod(10.0f, () =>{
-
-                GetComponent<CardController>().TsukuriInit(GameManager.instance.countTsukuriID);
-                GameManager.instance.countTsukuriID++;
-                transform.position = CardPos;
-                rb.velocity = new Vector2( 0,0);
-                rb.gravityScale = 0.0f;
-                gameObject.SetActive (true);
-                GetComponent<timeClock>().doStart = true;
+                    StartCoroutine(DelayMethod(10.0f, () =>{
+                        GetComponent<CardController>().TsukuriInit(GameManager.instance.countTsukuriID);
+                        GameManager.instance.countTsukuriID++;
+                        transform.position = CardPos;
+                        rb.velocity = new Vector2( 0,0);
+                        rb.gravityScale = 0.0f;
+                        gameObject.SetActive (true);
+                        GetComponent<timeClock>().UIobj.fillAmount = 5.0f;
+                        GetComponent<timeClock>().doStart = true;
+                    }));
+                }
 
             }));
-
-        }));
         
-        Debug.Log(target1.GetComponent<BushuCardView>().MyTsukuriUnique);
+        // Debug.Log(target1.GetComponent<BushuCardView>().MyTsukuriUnique);
     }
+        }
+        
 
 private IEnumerator DelayMethod(float waitTime, Action action)
 {

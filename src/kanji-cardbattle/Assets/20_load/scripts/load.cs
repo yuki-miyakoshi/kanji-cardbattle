@@ -17,6 +17,6 @@ public class load: MonoBehaviour {
  
     void ChangeScene()
     {
-        SceneManager.LoadScene("battle-field");
+        SceneManager.LoadScene("battle");
     }
 }
