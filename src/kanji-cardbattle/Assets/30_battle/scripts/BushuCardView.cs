@@ -9,6 +9,7 @@ public class BushuCardView : MonoBehaviour
     public int CardID;
     public string BushuUnique;
     public string[] MyTsukuriUnique;
+    public string[] MyKanjiUnique;
 
     public void Show(BushuCardModel cardModel) // cardModelのデータ取得と反映
     {
@@ -16,6 +17,7 @@ public class BushuCardView : MonoBehaviour
         BushuUnique = cardModel.BushuUnique;
 
         MyTsukuriUnique = cardModel.MyTsukuriUnique;
+        MyKanjiUnique = cardModel.MyKanjiUnique;
 
         bushuText.text = cardModel.BushuText;
     }

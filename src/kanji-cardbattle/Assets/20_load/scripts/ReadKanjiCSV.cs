@@ -9,6 +9,12 @@ public class ReadKanjiCSV : MonoBehaviour
 {
 
     public static ReadKanjiCSV instance;
+    private TextAsset csvFile; // CSVファイル
+    private List<string[]> csvDatas = new List<string[]>(); // CSVの中身を入れるリスト
+    private List<string[]> BushuToTsukuri_Unique = new List<string[]>();
+    private List<string[]> BushuToKanji_Unique = new List<string[]>();
+    private string temp ;
+    // private string temp2;
    
     public void Awake()
     {
@@ -17,12 +23,6 @@ public class ReadKanjiCSV : MonoBehaviour
             instance = this;
         }
     }
-
-    private TextAsset csvFile; // CSVファイル
-    private List<string[]> csvDatas = new List<string[]>(); // CSVの中身を入れるリスト
-    private List<string[]> BushuToTsukuri_Unique = new List<string[]>();
-    private string temp ;
-    // private List<string> TsukuriUnique = new List<string>();
 
     public void Initialized() // cardModelのデータ取得と反映
     {
@@ -35,6 +35,7 @@ public class ReadKanjiCSV : MonoBehaviour
             csvDatas.Add(line.Split(',')); // , 区切りでリストに追加
         }
 
+
         int maxBushuUnique = 0;
         for (int i = 0 ; i < getListCount() ; i++){
             if ( maxBushuUnique < int.Parse(getKanjiCSV(i,2)) ){
@@ -42,8 +43,8 @@ public class ReadKanjiCSV : MonoBehaviour
             } 
         }
 
+        //getBushuToTsukuri_Unique---
         for(int i = 0 ; i < maxBushuUnique ; i++){
-
             temp = null;
             for(int j = 0 ; j < getListCount() ; j++){
                 if( int.Parse(getKanjiCSV(j,2)) == i+1){
@@ -51,10 +52,18 @@ public class ReadKanjiCSV : MonoBehaviour
                 }
             }
             BushuToTsukuri_Unique.Add(temp.Split(','));
+        }//getBushuToTsukuri_Unique---
 
-        }
-
-
+        //getBushuToKanji_Unique---
+        for(int i = 0 ; i < maxBushuUnique ; i++){
+            temp = null;
+            for(int j = 0 ; j < getListCount() ; j++){
+                if( int.Parse(getKanjiCSV(j,2)) == i+1){
+                    temp = temp + getKanjiCSV(j,0)+",";
+                }
+            }
+            BushuToKanji_Unique.Add(temp.Split(','));
+        }//getBushuToKanji_Unique---
     }
 
     public string getKanjiCSV(int row,int col){
@@ -62,9 +71,11 @@ public class ReadKanjiCSV : MonoBehaviour
     }
 
     public string[] getBushuToTsukuri_Unique(string BushuUnique){
-
         return BushuToTsukuri_Unique[int.Parse(BushuUnique)-1];
-       
+    }
+
+    public string[] getBushuToKanji_Unique(string BushuUnique){
+        return BushuToKanji_Unique[int.Parse(BushuUnique)-1];
     }
 
     public int getListCount(){
