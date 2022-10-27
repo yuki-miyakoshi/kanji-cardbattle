@@ -5,17 +5,18 @@ using UnityEngine.UI;
  
 public class KanjiCardView : MonoBehaviour
 {
-    [SerializeField] public Text kanjiText;
-    public int KanjiID = 0;
-    public string KanjiUnique,KanjiKanji;
+    [SerializeField] public Text kanjiText_;
+    public int KanjiID_;
+    public string KanjiUnique_,KanjiKanji_;
+    
 
     public void Show(KanjiCardModel cardModel) // cardModelのデータ取得と反映
     {
 
-        KanjiID = cardModel.KanjiID_;
+        KanjiID_ = cardModel.KanjiID_;
 
-        KanjiUnique = cardModel.KanjiUnique_;
+        KanjiUnique_ = cardModel.KanjiUnique_;
 
-        kanjiText.text = cardModel.KanjiKanji_;
+        kanjiText_.text = cardModel.Kanji_;
     }
 }

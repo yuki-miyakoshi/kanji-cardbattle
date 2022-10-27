@@ -6,15 +6,17 @@ using System;
 public class KanjiCardModel
 {
     public int KanjiID_ = 0;
-    public string KanjiUnique_,KanjiKanji_;
+    public string KanjiUnique_;
+    public string Kanji_;
 
-    public KanjiCardModel(int kanjiID,string kanjiUnique,string kanjiKanji)
+    public KanjiCardModel(string KanjiUnique)
     {
-        KanjiID_ = kanjiID;
 
-        KanjiUnique_ = kanjiUnique;
+        KanjiUnique_ = KanjiUnique;
 
-        KanjiKanji_ = kanjiKanji;
+        Kanji_ = ReadKanjiCSV.instance.getKanjiCSV(int.Parse(KanjiUnique),1);
+
+        KanjiID_++;
     }
 
 }
