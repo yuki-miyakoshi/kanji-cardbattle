@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Transform cardField;
     [SerializeField] CardController bushuCardPrefab;
     [SerializeField] Transform themeField;
-    // [SerializeField] CardController kanjiCardPrefab;
-    // [SerializeField] Transform kanjiField;
+    [SerializeField] CardController kanjiCardPrefab;
+    [SerializeField] Transform kanjiField;
 
     public static GameManager instance;
 
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     public bool doNextBushu,doSetKanji;
     public int countTsukuriID = 0,countBushuID = 0;
 
-    public int KanjiID = 0,KanjiPower = 0;
+    public int KanjiID = 0;
     public string KanjiUnique,KanjiKanji;
 
     private bool beingMeasured; // 計測中であることを表す変数
@@ -97,6 +97,11 @@ public class GameManager : MonoBehaviour
             elapsedTime = Time.time - start; // 経過時間を格納
             timerText = elapsedTime.ToString("0");
         }
+    }
+
+    public void SetNewKanji(string kanjiUnique){
+        CardController kanjiCard = Instantiate(kanjiCardPrefab, kanjiField);
+        kanjiCard.KanjiInit(kanjiUnique);
     }
 
 }

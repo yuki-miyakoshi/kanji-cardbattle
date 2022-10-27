@@ -86,6 +86,7 @@ public class TsukuriCardView : MonoBehaviour
                 // }
                     // GameObject.Find("GameObject").GetComponent<GameManager>().isMoving = false;
                     SetNextTsukuri();
+                    SetNewKanji("1");
                 }else{
                     rb.velocity = new Vector2( 3,3);
                     rb.gravityScale = 0.5f;
@@ -110,6 +111,10 @@ public class TsukuriCardView : MonoBehaviour
         gameObject.SetActive (true);
         GetComponent<timeClock>().UIobj.fillAmount = 5.0f;
         GetComponent<timeClock>().doStart = true;
+    }
+
+    private void SetNewKanji(string kanjiUnique){
+        GameManager.instance.SetNewKanji(kanjiUnique);
     }
         
 
