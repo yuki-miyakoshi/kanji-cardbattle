@@ -5,18 +5,16 @@ using System;
  
 public class KanjiCardModel
 {
-    public int KanjiID = 0,KanjiPower;
-    public string KanjiUnique,KanjiKanji;
+    public int KanjiID_ = 0;
+    public string KanjiUnique_,KanjiKanji_;
 
-    public KanjiCardModel(int kanjiID,int kanjiPower,string kanjiUnique,string kanjiKanji)
+    public KanjiCardModel(int kanjiID,string kanjiUnique,string kanjiKanji)
     {
-        KanjiID = kanjiID;
+        KanjiID_ = kanjiID;
 
-        KanjiPower = kanjiPower;
+        KanjiUnique_ = kanjiUnique;
 
-        KanjiUnique = kanjiUnique;
-
-        KanjiKanji = kanjiKanji;
+        KanjiKanji_ = kanjiKanji;
     }
 
 }

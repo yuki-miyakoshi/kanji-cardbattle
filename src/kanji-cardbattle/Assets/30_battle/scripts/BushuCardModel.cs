@@ -8,6 +8,7 @@ public class BushuCardModel
     public int CardID;
     public int Randam;
     public string[] MyTsukuriUnique;
+    public string[] MyKanjiUnique;
     public string BushuText;
     public string BushuUnique;
 
@@ -17,6 +18,7 @@ public class BushuCardModel
         BushuUnique = ReadKanjiCSV.instance.getKanjiCSV((Randam),2);
 
         MyTsukuriUnique = ReadKanjiCSV.instance.getBushuToTsukuri_Unique(BushuUnique);
+        MyKanjiUnique = ReadKanjiCSV.instance.getBushuToKanji_Unique(BushuUnique);
 
         BushuText = ReadKanjiCSV.instance.getKanjiCSV(Randam,3);
 

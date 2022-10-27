@@ -57,6 +57,8 @@ public class GameManager : MonoBehaviour
         tsukuriCard.name = tsukuriCard.GetComponent<TsukuriCardView>().TsukuriUnique;
         countTsukuriID++;
         }
+
+        beingMeasured = false;
     }
 
     void Update(){
@@ -88,7 +90,7 @@ public class GameManager : MonoBehaviour
         //     doSetKanji = false;
         // }
 
-        if (beingMeasured){
+        if (!beingMeasured){
             beingMeasured = !beingMeasured;
             start = Time.time; // 開始時間を格納
         }else{

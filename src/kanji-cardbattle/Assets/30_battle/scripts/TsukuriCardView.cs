@@ -87,8 +87,8 @@ public class TsukuriCardView : MonoBehaviour
                     // GameObject.Find("GameObject").GetComponent<GameManager>().isMoving = false;
                     SetNextTsukuri();
                 }else{
-                    rb.velocity = new Vector2( 1,1);
-                    rb.gravityScale = 1.0f;
+                    rb.velocity = new Vector2( 3,3);
+                    rb.gravityScale = 0.5f;
 
                     // GameObject.Find("GameObject").GetComponent<GameManager>().isMoving = false;
 
