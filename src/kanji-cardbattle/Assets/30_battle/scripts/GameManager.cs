@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     public string timerText;
     private float start; // 計測の開始時間を格納する変数
     private float elapsedTime; // 経過時間を格納する変数
+
+    private Rigidbody2D rb = null;
  
     // public bool isMoving = false;
 
@@ -102,6 +104,9 @@ public class GameManager : MonoBehaviour
     public void SetNewKanji(string kanjiUnique){
         CardController kanjiCard = Instantiate(kanjiCardPrefab, kanjiField);
         kanjiCard.KanjiInit(kanjiUnique);
+        rb = kanjiCard.GetComponent<Rigidbody2D>();
+        rb.velocity = new Vector2( UnityEngine.Random.Range(-1.5f,1.5f),1.0f);
+        rb.gravityScale = 0.1f;
     }
 
 }

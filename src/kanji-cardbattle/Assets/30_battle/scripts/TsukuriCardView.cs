@@ -12,17 +12,22 @@ public class TsukuriCardView : MonoBehaviour
     public string TsukuriUnique;
     public int Power;
 
-    public float speed = 5.0f;
+    public float speed = 8.0f;
     private Rigidbody2D rb = null;
+    private Transform tf = null;
 
-    private Vector3 CardPos;
-    private Vector3 MyField;
+    private Vector2 CardPos;
+    private Vector2 CardScale;
+    private Vector2 MyField;
+    // private Vector2 sd;
     public bool inactive;
 
     void Start()
      {
         //コンポーネントのインスタンスを捕まえる
         rb = GetComponent<Rigidbody2D>();
+        tf = GetComponent<Transform>();
+        // sd = GetComponent<RectTransform>().sizeDelta;
      }
 
     public void Show(TsukuriCardModel cardModel) // cardModelのデータ取得と反映
@@ -49,8 +54,11 @@ public class TsukuriCardView : MonoBehaviour
             GetComponent<timeClock>().doStart = false;
             rb.velocity = new Vector2( (MyField.x - CardPos.x ) * speed, (-CardPos.y)*speed);
             GameObject target1 = GameObject.Find("Bushu");
+            StartCoroutine("ScaleDown");
+            // sd.x *= 2;
+            // GetComponent<RectTransform>().sizeDelta = sd;
 
-            StartCoroutine(DelayMethod(2.0f, () =>{
+            StartCoroutine(DelayMethod(1.0f, () =>{
 
                 if( target1.GetComponent<BushuCardView>().MyTsukuriUnique.Contains(TsukuriUnique) == true){
 
@@ -88,7 +96,7 @@ public class TsukuriCardView : MonoBehaviour
                     SetNextTsukuri();
                     SetNewKanji("1");
                 }else{
-                    rb.velocity = new Vector2( 3,3);
+                    rb.velocity = new Vector2( 10,10);
                     rb.gravityScale = 0.5f;
 
                     // GameObject.Find("GameObject").GetComponent<GameManager>().isMoving = false;
@@ -124,4 +132,11 @@ public class TsukuriCardView : MonoBehaviour
         action();
     }
     
+    private IEnumerator ScaleDown()
+    {
+        for ( float i = 1 ; i < 2 ; i-=0.1f ){
+            tf.localScale = new Vector2(i,i);
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
 }

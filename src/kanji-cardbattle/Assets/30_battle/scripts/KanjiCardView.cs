@@ -8,7 +8,7 @@ public class KanjiCardView : MonoBehaviour
     [SerializeField] public Text kanjiText_;
     public int KanjiID_;
     public string KanjiUnique_,KanjiKanji_;
-    private Rigidbody2D rb = null;
+    
 
     public void Show(KanjiCardModel cardModel) // cardModelのデータ取得と反映
     {

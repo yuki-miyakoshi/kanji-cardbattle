@@ -192,7 +192,8 @@ MonoBehaviour:
   CardID: 0
   TsukuriUnique: 
   Power: 0
-  speed: 0.5
+  speed: 0.8
+  inactive: 0
 --- !u!114 &2545089697457865045
 MonoBehaviour:
   m_ObjectHideFlags: 0

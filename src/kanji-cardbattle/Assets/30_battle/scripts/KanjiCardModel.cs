@@ -11,12 +11,12 @@ public class KanjiCardModel
 
     public KanjiCardModel(string KanjiUnique)
     {
-        KanjiID_++;
 
         KanjiUnique_ = KanjiUnique;
 
         Kanji_ = ReadKanjiCSV.instance.getKanjiCSV(int.Parse(KanjiUnique),1);
 
+        KanjiID_++;
     }
 
 }
