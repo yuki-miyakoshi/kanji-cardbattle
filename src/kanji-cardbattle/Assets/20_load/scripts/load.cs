@@ -9,7 +9,8 @@ public class load: MonoBehaviour {
     void Start () {
 
         ReadKanjiCSV.instance.Initialized();
-        ChangeScene();
+        Invoke("ChangeScene",4.0f);
+       
     }
     
     // Update is called once per frame
