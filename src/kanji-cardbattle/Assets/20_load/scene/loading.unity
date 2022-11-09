@@ -396,6 +396,7 @@ GameObject:
   - component: {fileID: 289875726}
   - component: {fileID: 289875728}
   - component: {fileID: 289875729}
+  - component: {fileID: 289875730}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -457,6 +458,21 @@ MonoBehaviour:
   pettan1Object: {fileID: 1400996254}
   pettan2Object: {fileID: 1319974028}
   pettan3Object: {fileID: 166326498}
+--- !u!114 &289875730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289875725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f80e13ec94d8b34da639132dcdfb429, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 939257646}
+  _cycle: 1
+  _dutyRate: 0.952
 --- !u!1 &939257644
 GameObject:
   m_ObjectHideFlags: 0
