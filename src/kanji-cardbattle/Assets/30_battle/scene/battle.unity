@@ -575,7 +575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14881bb3c24254ea7a5a48db72f3b482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tsukuriCardPrefab: {fileID: 505784905435103835, guid: 8c2754fee700f473b857053d62b1bae3, type: 3}
+  tsukuriCardPrefab: {fileID: 505784905435103835, guid: dd054c718edfb4491b2e9294f8fb755a, type: 3}
   cardField: {fileID: 1579842502}
   bushuCardPrefab: {fileID: 1466378574668322275, guid: 23f03a7b5548e4b8baedb538ddba8b72, type: 3}
   themeField: {fileID: 434283879}
@@ -851,7 +851,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11, y: 73.04999}
+  m_AnchoredPosition: {x: 11, y: 73.05005}
   m_SizeDelta: {x: 261.43, y: 243.93005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &966173782
