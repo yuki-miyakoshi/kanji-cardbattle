@@ -194,6 +194,7 @@ MonoBehaviour:
   Power: 0
   speed: 0.8
   inactive: 0
+  particle: {fileID: 5754080607206869917, guid: 6430ae246cc9e4d638130a7e0bd48416, type: 3}
 --- !u!114 &2545089697457865045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,7 +538,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000012398, y: -14.3}
+  m_AnchoredPosition: {x: 0.000015258789, y: -14.300001}
   m_SizeDelta: {x: -61.6181, y: -56.6552}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2006527892114678849

@@ -21,6 +21,7 @@ public class TsukuriCardView : MonoBehaviour
     private Vector2 MyField;
     // private Vector2 sd;
     public bool inactive;
+    public ParticleSystem particle;
 
     void Start()
      {
@@ -96,8 +97,10 @@ public class TsukuriCardView : MonoBehaviour
                     SetNextTsukuri();
                     SetNewKanji("1");
                 }else{
-                    rb.velocity = new Vector2( 10,10);
-                    rb.gravityScale = 0.5f;
+                    // rb.velocity = new Vector2( 1,-1);
+                    // rb.gravityScale = 0.5f;
+                    gameObject.SetActive (false);
+                    Instantiate(particle, new Vector2( -0.85f,0.23f), Quaternion.identity);
 
                     // GameObject.Find("GameObject").GetComponent<GameManager>().isMoving = false;
 
