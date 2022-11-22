@@ -14,6 +14,7 @@ public class ReadKanjiCSV : MonoBehaviour
     private List<string[]> BushuToTsukuri_Unique = new List<string[]>();
     private List<string[]> BushuToKanji_Unique = new List<string[]>();
     private string temp ;
+    string temp3;
     // private string temp2;
    
     public void Awake()
@@ -80,5 +81,16 @@ public class ReadKanjiCSV : MonoBehaviour
 
     public int getListCount(){
         return csvDatas.Count();
+    }
+
+    public string getBushuAndTsukuriToKanji_Unique(string Bushu,string Tsukuri){
+        
+        for(int i=0;i<getListCount();i++){
+            if(csvDatas[i][2] == Bushu){
+                if(csvDatas[i][4] == Tsukuri)
+                temp3 = csvDatas[i][0];
+            }
+        }
+        return temp3;
     }
 }

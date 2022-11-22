@@ -14,10 +14,10 @@ public class TsukuriCardView : MonoBehaviour
 
     public float speed = 8.0f;
     private Rigidbody2D rb = null;
-    private Transform tf = null;
+    // private Transform tf = null;
 
     private Vector2 CardPos;
-    private Vector2 CardScale;
+    // private Vector2 CardScale;
     private Vector2 MyField;
     // private Vector2 sd;
     public bool inactive;
@@ -27,7 +27,7 @@ public class TsukuriCardView : MonoBehaviour
      {
         //コンポーネントのインスタンスを捕まえる
         rb = GetComponent<Rigidbody2D>();
-        tf = GetComponent<Transform>();
+        // tf = GetComponent<Transform>();
         // sd = GetComponent<RectTransform>().sizeDelta;
      }
 
@@ -55,7 +55,7 @@ public class TsukuriCardView : MonoBehaviour
             GetComponent<timeClock>().doStart = false;
             rb.velocity = new Vector2( (MyField.x - CardPos.x ) * speed, (-CardPos.y)*speed);
             GameObject target1 = GameObject.Find("Bushu");
-            StartCoroutine("ScaleDown");
+            // StartCoroutine("ScaleDown");
             // sd.x *= 2;
             // GetComponent<RectTransform>().sizeDelta = sd;
 
@@ -94,12 +94,13 @@ public class TsukuriCardView : MonoBehaviour
                 //     }
                 // }
                     // GameObject.Find("GameObject").GetComponent<GameManager>().isMoving = false;
+                    SetNewKanji(ReadKanjiCSV.instance.getBushuAndTsukuriToKanji_Unique(target1.GetComponent<BushuCardView>().BushuUnique,TsukuriUnique));
                     SetNextTsukuri();
-                    SetNewKanji("1");
+                    
                 }else{
                     // rb.velocity = new Vector2( 1,-1);
                     // rb.gravityScale = 0.5f;
-                    gameObject.SetActive (false);
+                    // gameObject.SetActive (false);
                     Instantiate(particle, new Vector2( -0.85f,0.23f), Quaternion.identity);
 
                     // GameObject.Find("GameObject").GetComponent<GameManager>().isMoving = false;
@@ -116,6 +117,7 @@ public class TsukuriCardView : MonoBehaviour
     private void SetNextTsukuri(){
         GetComponent<CardController>().TsukuriInit(GameManager.instance.countTsukuriID);
         GameManager.instance.countTsukuriID++;
+        // CardPos.z = 0;
         transform.position = CardPos;
         rb.velocity = new Vector2( 0,0);
         rb.gravityScale = 0.0f;
@@ -135,11 +137,11 @@ public class TsukuriCardView : MonoBehaviour
         action();
     }
     
-    private IEnumerator ScaleDown()
-    {
-        for ( float i = 1 ; i < 2 ; i-=0.01f ){
-            tf.localScale = new Vector2(i,i);
-            yield return new WaitForSeconds(0.01f);
-        }
-    }
+    // private IEnumerator ScaleDown()
+    // {
+    //     for ( float i = 1 ; i < 2 ; i-=0.01f ){
+    //         tf.localScale = new Vector2(i,i);
+    //         yield return new WaitForSeconds(0.01f);
+    //     }
+    // }
 }
