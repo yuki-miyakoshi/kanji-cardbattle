@@ -11,24 +11,16 @@ public class TsukuriCardView : MonoBehaviour
     public int CardID;
     public string TsukuriUnique;
     public int Power;
-
-    public float speed = 8.0f;
+    private float speed = 1.0f;
     private Rigidbody2D rb = null;
-    // private Transform tf = null;
-
     private Vector3 CardPos;
-    // private Vector2 CardScale;
     private Vector2 MyField;
-    // private Vector2 sd;
     public bool inactive;
     public ParticleSystem particle;
 
     void Start()
      {
-        //コンポーネントのインスタンスを捕まえる
         rb = GetComponent<Rigidbody2D>();
-        // tf = GetComponent<Transform>();
-        // sd = GetComponent<RectTransform>().sizeDelta;
      }
 
     public void Show(TsukuriCardModel cardModel) // cardModelのデータ取得と反映
@@ -46,65 +38,21 @@ public class TsukuriCardView : MonoBehaviour
     public void OnClickCombineCard(){
 
         if(inactive == false){
-            // GameObject.Find("GameObject").GetComponent<GameManager>().isMoving = true;
-
             CardPos = transform.position;
-            MyField = GameObject.Find("myfield").transform.position;
-
+            MyField = GameObject.Find("enemyfield").transform.position;
             inactive = true;
             GetComponent<timeClock>().doStart = false;
             rb.velocity = new Vector2( (MyField.x - CardPos.x ) * speed, (-CardPos.y)*speed);
             GameObject target1 = GameObject.Find("Bushu");
-            // StartCoroutine("ScaleDown");
-            // sd.x *= 2;
-            // GetComponent<RectTransform>().sizeDelta = sd;
-
             StartCoroutine(DelayMethod(1.0f, () =>{
-
+                
                 if( target1.GetComponent<BushuCardView>().MyTsukuriUnique.Contains(TsukuriUnique) == true){
-
                     rb.velocity = new Vector2( 0,0);
                     GameObject.Find("myscore").GetComponent<Text>().text = ( int.Parse(GameObject.Find("myscore").GetComponent<Text>().text) + Power ).ToString();
-
-
-                // gameObject.SetActive (false);
-                // GameManager.instance.doNextTsukuri++;
-
-                // rb.velocity = new Vector2( 0,0);
-                // rb.gravityScale = 0.0f;
-
-                // GetComponent<CardController>().TsukuriInit(GameManager.instance.countTsukuriID);
-                // GameManager.instance.countTsukuriID++;
-                // GetComponent<timeClock>().UIobj.fillAmount = 5.0f;
-
-                // for(int i = 0; i < ReadKanjiCSV.instance.getListCount(); i++){
-                //     if(ReadKanjiCSV.instance.getKanjiCSV(i,2) == target1.GetComponent<BushuCardView>().BushuUnique){
-                //         if(ReadKanjiCSV.instance.getKanjiCSV(i,4) == TsukuriUnique){
-
-                //             Transform myTransform = this.transform;
-                //             Vector3 pos = transform.position;
-
-                //             Debug.Log(pos.x);
-                //             target1.GetComponent<BushuCardView>().bushuText.text = ReadKanjiCSV.instance.getKanjiCSV(i,1);
-                //             GameManager.instance.doSetKanji = true;
-                //             GameManager.instance.KanjiPower = Power;
-                //             GameManager.instance.KanjiUnique = i.ToString();
-                //             GameManager.instance.KanjiKanji = ReadKanjiCSV.instance.getKanjiCSV(i,1);
-                //         }
-                //     }
-                // }
-                    // GameObject.Find("GameObject").GetComponent<GameManager>().isMoving = false;
                     SetNewKanji(ReadKanjiCSV.instance.getBushuAndTsukuriToKanji_Unique(target1.GetComponent<BushuCardView>().BushuUnique,TsukuriUnique));
                     SetNextTsukuri();
-                    
                 }else{
-                    // rb.velocity = new Vector2( 1,-1);
-                    // rb.gravityScale = 0.5f;
-                    // gameObject.SetActive (false);
-                    Instantiate(particle, new Vector2( -0.85f,0.23f), Quaternion.identity);
-
-                    // GameObject.Find("GameObject").GetComponent<GameManager>().isMoving = false;
-
+                    Instantiate(particle, new Vector2( -1.2f,0.5f), Quaternion.identity);
                     StartCoroutine(DelayMethod(10.0f, () =>{
                         SetNextTsukuri();
                     }));
@@ -117,7 +65,6 @@ public class TsukuriCardView : MonoBehaviour
     private void SetNextTsukuri(){
         GetComponent<CardController>().TsukuriInit(GameManager.instance.countTsukuriID);
         GameManager.instance.countTsukuriID++;
-        // CardPos.z = 0;
         transform.position = CardPos;
         rb.velocity = new Vector2( 0,0);
         rb.gravityScale = 0.0f;
@@ -136,12 +83,5 @@ public class TsukuriCardView : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         action();
     }
-    
-    // private IEnumerator ScaleDown()
-    // {
-    //     for ( float i = 1 ; i < 2 ; i-=0.01f ){
-    //         tf.localScale = new Vector2(i,i);
-    //         yield return new WaitForSeconds(0.01f);
-    //     }
-    // }
+
 }
