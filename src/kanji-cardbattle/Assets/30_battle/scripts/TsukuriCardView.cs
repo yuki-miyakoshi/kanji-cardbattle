@@ -16,7 +16,7 @@ public class TsukuriCardView : MonoBehaviour
     private Rigidbody2D rb = null;
     // private Transform tf = null;
 
-    private Vector2 CardPos;
+    private Vector3 CardPos;
     // private Vector2 CardScale;
     private Vector2 MyField;
     // private Vector2 sd;
