@@ -1727,7 +1727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2218018465914599528, guid: c465efb5d288843e6b0dd60a1d5120aa, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2218018465914599528, guid: c465efb5d288843e6b0dd60a1d5120aa, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1735,15 +1735,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2218018465914599528, guid: c465efb5d288843e6b0dd60a1d5120aa, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2218018465914599528, guid: c465efb5d288843e6b0dd60a1d5120aa, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2218018465914599528, guid: c465efb5d288843e6b0dd60a1d5120aa, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2218018465914599528, guid: c465efb5d288843e6b0dd60a1d5120aa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1779,7 +1779,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2218018465914599528, guid: c465efb5d288843e6b0dd60a1d5120aa, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -150
       objectReference: {fileID: 0}
     - target: {fileID: 2218018465914599528, guid: c465efb5d288843e6b0dd60a1d5120aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2061,7 +2061,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
