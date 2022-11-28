@@ -49,6 +49,9 @@ public class TsukuriCardView : MonoBehaviour
                 if( target1.GetComponent<BushuCardView>().MyTsukuriUnique.Contains(TsukuriUnique) == true){
                     rb.velocity = new Vector2( 0,0);
                     GameObject.Find("myscore").GetComponent<Text>().text = ( int.Parse(GameObject.Find("myscore").GetComponent<Text>().text) + Power ).ToString();
+Debug.Log("kanjiUnique="+ReadKanjiCSV.instance.getBushuAndTsukuriToKanji_Unique(target1.GetComponent<BushuCardView>().BushuUnique,TsukuriUnique));
+Debug.Log("TsukuriUnique="+TsukuriUnique);
+Debug.Log("BushuUnique="+target1.GetComponent<BushuCardView>().BushuUnique);
                     SetNewKanji(ReadKanjiCSV.instance.getBushuAndTsukuriToKanji_Unique(target1.GetComponent<BushuCardView>().BushuUnique,TsukuriUnique));
                     SetNextTsukuri();
                 }else{
