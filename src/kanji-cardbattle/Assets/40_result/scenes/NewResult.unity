@@ -327,7 +327,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 80, y: -400}
+  m_AnchoredPosition: {x: 80, y: -386.88745}
   m_SizeDelta: {x: 480, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &147850567
@@ -671,7 +671,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -320, y: 424.82858}
+  m_AnchoredPosition: {x: -320, y: 449.71118}
   m_SizeDelta: {x: 640, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &370018942
@@ -701,6 +701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KanjiID: 1
+  title: {fileID: 1272051383}
   column1: {fileID: 1217302993}
   column2: {fileID: 147850564}
 --- !u!1 &389911038
@@ -1594,7 +1595,7 @@ GameObject:
   - component: {fileID: 1272051386}
   - component: {fileID: 1272051385}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2092,7 +2093,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 670796427}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.91914237
+  m_Size: 0.75450426
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
