@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef9c4b20abc011248822d6a8c591c4b7, type: 3}
+  m_Name: Data1
+  m_EditorClassIdentifier: 
+  KanjiID: 1
+  Kanji: "\u4E62"
+  Busyu: "\u5C71\uFF08\u3084\u307E\u30FB\u3084\u307E\u3078\u3093\u30FB\u3084\u307E\u304B\u3093\u3080\u308A\uFF09"
+  Onnyomi:
+  - "\u30AB\u30A4"
+  Kunnyomi:
+  - "\u305F\u308F"
+  Kakusu: "\uFF14\u753B\uFF08\u5C71\uFF13\uFF0B\uFF11\uFF09"
+  Imi:
+  - "\u7269\u3092\u306D\u3060\u308B\u3002\u9858\u3044\u6C42\u3081\u308B\u3002\uFF1D\u4E10"
+  - "\u65E5\u672C\u305F\u308F\u3002\u305F\u304A\u3002\u9023\u306A\u3063\u305F\u5C71\u306E\u5CF0\u3068\u5CF0\u306E\u9593\u306E\u304F\u307C\u3093\u3060\u6240\u3002"
+  - "\u65E5\u672C\u4EBA\u540D\u3084\u5730\u540D\u306B\u7528\u3044\u3089\u308C\u308B\u5B57\u3002"
+  Gakunenn: '-'
+  Kannkenn: '-'
+  Syubetu: '-'
