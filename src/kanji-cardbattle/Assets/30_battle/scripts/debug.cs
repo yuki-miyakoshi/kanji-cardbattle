@@ -7,7 +7,7 @@ public class debug : MonoBehaviour
 {
     public void OnClickEndButton()
     {
-        SceneManager.LoadScene("ResultsScene");
+        SceneManager.LoadScene("newresultScene");
     }
 
     public void OnClickReloadButton()

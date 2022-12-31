@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
             doNextBushu = false;
         }
         if( int.Parse( GameObject.Find("myscore").GetComponent<Text>().text ) > 9){
-            SceneManager.LoadScene("ResultsScene");
+            SceneManager.LoadScene("newresultScene");
         }
         if (!beingMeasured){
             beingMeasured = !beingMeasured;
