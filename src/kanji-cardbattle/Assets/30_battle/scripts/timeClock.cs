@@ -6,12 +6,16 @@ public class timeClock : MonoBehaviour {
 
   public Image UIobj;
   public bool doStart;
-  public float countTime = 5.0f;
+  public float TsukuricountTime = 3.0f;
+  public float BushucountTime = 5.0f;
   public bool isBushu;
 
   void Update (){
     if (doStart) {
-      UIobj.fillAmount -= 1.0f / countTime * Time.deltaTime;
+
+      if(!isBushu)UIobj.fillAmount -= 1.0f / TsukuricountTime * Time.deltaTime;
+      if(isBushu)UIobj.fillAmount -= 1.0f / BushucountTime * Time.deltaTime;
+      
     }
 
     if( UIobj.fillAmount == 0){
@@ -30,6 +34,7 @@ public class timeClock : MonoBehaviour {
       }
       if( isBushu ){
         // if(GameObject.Find("GameObject").GetComponent<GameManager>().isMoving){
+          
           GameManager.instance.doNextBushu = true;
           gameObject.SetActive (false);
         // }
