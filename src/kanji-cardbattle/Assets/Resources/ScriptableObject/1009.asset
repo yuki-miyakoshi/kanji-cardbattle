@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b06b794cf490a4c83d273f75687909, type: 3}
+  m_Name: 1009
+  m_EditorClassIdentifier: 
+  kanjiID: 1009
+  kanji: "\u65AF"
+  part: "\u65A4\uFF08\u304A\u306E\u3065\u304F\u308A\u30FB\u304A\u306E\u30FB\u304D\u3093\uFF09"
+  partLeft: "\u5176"
+  partLeftId: 2
+  partRight: "\u65A4"
+  partRightId: 197
+  readO:
+  - "\u30B7"
+  readK:
+  - "\u304B\uFF08\u304B\u308B\uFF09"
+  - "\u304B\uFF08\u304F\uFF09"
+  - "\u3053\uFF08\u306E\uFF09"
+  - "\u3053\u308C"
+  mean:
+  - "\u304D\u308B\u3002\u5207\u308A\u3055\u304F\u3002\u5207\u308A\u96E2\u3059\u3002"
+  - "\u300C\u3053\u306E\u300D\u300C\u3053\u308C\u300D\u300C\u3053\u3053\u300D\u3068\u8AAD\u307F\u3001\uFF08\u8FD1\u304F\u306E\uFF09\u7269\u4E8B\u3092\u6307\u3057\u793A\u3059\u610F\u3092\u8868\u308F\u3059\u3002"
+  - "\u300C\u304B\u304F\u300D\u3068\u8AAD\u307F\u3001\u300C\u3053\u306E\u3088\u3046\u306B\u300D\u306E\u610F\u3092\u8868\u308F\u3059\u3002"
+  - "\u300C\u3059\u306A\u308F\u3061\u300D\u3068\u8AAD\u307F\u3001\u300C\uFF5E\u3067\u3042\u308C\u3070\uFF5E\u3068\u306A\u308B\u300D\u300C\uFF5E\u3057\u305F\u3089\uFF5E\u3059\u308B\u300D\u306A\u3069\u306E\u610F\u3092\u8868\u308F\u3059\u3002"
+  stroke: 12
+  strokePart: 4
+  strokeOther: 8
+  schoolGrade: '-'
+  kankenGrade: 15
+  category: "\u4EBA\u540D\u7528\u6F22\u5B57\u540D\u524D\u306B\u4F7F\u3048\u308B\u6F22\u5B57"

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b06b794cf490a4c83d273f75687909, type: 3}
+  m_Name: 317
+  m_EditorClassIdentifier: 
+  kanjiID: 317
+  kanji: "\u5490"
+  part: "\u53E3\uFF08\u304F\u3061\u30FB\u304F\u3061\u3078\u3093\uFF09"
+  partLeft: "\u53E3"
+  partLeftId: 19
+  partRight: "\u4ED8"
+  partRightId: 851
+  readO:
+  - "\u30D5"
+  - "\u30DB"
+  readK:
+  - "\u3044\u3044\u3064\uFF08\u3051\u308B\uFF09"
+  - "\u3075\uFF08\u304F\uFF09"
+  mean:
+  - "\u3075\u304F\u3002\u606F\u3092\u3075\u304F\u3002\u606F\u3092\u306F\u304D\u51FA\u3059\u3002"
+  - "\u300C\u5429\u5490\uFF08\u3075\u3093\u3077\u30FB\u3075\u3093\u3076\uFF09\u300D\u306F\u3001\u547D\u4EE4\u3059\u308B\u3002\u3044\u3044\u3064\u3051\u308B\u3002\u6307\u56F3\u3059\u308B\u3002"
+  stroke: 8
+  strokePart: 3
+  strokeOther: 5
+  schoolGrade: '-'
+  kankenGrade: 10
+  category: '-'

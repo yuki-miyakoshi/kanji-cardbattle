@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b06b794cf490a4c83d273f75687909, type: 3}
+  m_Name: 1331
+  m_EditorClassIdentifier: 
+  kanjiID: 1331
+  kanji: "\u6B54"
+  part: "\u6B20\uFF08\u3042\u304F\u3073\u30FB\u304B\u3051\u308B\u30FB\u3051\u3093\u3065\u304F\u308A\uFF09"
+  partLeft: "\u865A"
+  partLeftId: 268
+  partRight: "\u6B20"
+  partRightId: 90
+  readO:
+  - "\u30AD\u30E7"
+  readK:
+  - "\u3059\u3059\u308A\u306A\uFF08\u304F\uFF09"
+  mean:
+  - "\u3059\u3059\u308A\u306A\u304F\u3002\u606F\u3092\u5438\u3044\u8FBC\u3080\u3088\u3046\u306B\u3057\u3066\u3001\u58F0\u3092\u6BBA\u3057\u3066\u6CE3\u304F\u3002"
+  stroke: 16
+  strokePart: 4
+  strokeOther: 12
+  schoolGrade: '-'
+  kankenGrade: 10
+  category: '-'

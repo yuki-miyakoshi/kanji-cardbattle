@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b06b794cf490a4c83d273f75687909, type: 3}
+  m_Name: 191
+  m_EditorClassIdentifier: 
+  kanjiID: 191
+  kanji: "\u51B7"
+  part: "\u51AB\uFF08\u306B\u3059\u3044\uFF09"
+  partLeft: "\u51AB"
+  partLeftId: 34
+  partRight: "\u4EE4"
+  partRightId: 782
+  readO:
+  - "\u30EC\u30A4"
+  readK:
+  - "\u3055\uFF08\u307E\u3059\uFF09"
+  - "\u3055\uFF08\u3081\u308B\uFF09"
+  - "\u3064\u3081\uFF08\u305F\u3044\uFF09"
+  - "\u3072\uFF08\u3048\u308B\uFF09"
+  - "\u3072\uFF08\u3084\uFF09"
+  - "\u3072\uFF08\u3084\u304B\u3059\uFF09"
+  - "\u3072\uFF08\u3084\u3059\uFF09"
+  mean:
+  - "\u3055\u307E\u3059\u3002\u3055\u3081\u308B\u3002\u3072\u3048\u308B\u3002\u3072\u3084\u3059\u3002\u3064\u3081\u305F\u304F\u3059\u308B\u3002\u3064\u3081\u305F\u304F\u306A\u308B\u3002"
+  - "\u3064\u3081\u305F\u3044\u3002\u3072\u3084\u3084\u304B\u3002\u3059\u305A\u3057\u3044\u3002"
+  - "\u3064\u3081\u305F\u3044\u3002\u3072\u3084\u3084\u304B\u3002\u60C5\u304C\u3046\u3059\u3044\u3002\u5FC3\u304C\u3055\u3081\u3066\u3044\u308B\u3002"
+  - "\u3072\u3084\u304B\u3059\u3002\u3055\u3052\u3059\u3080\u3002\u304B\u3089\u304B\u3046\u3002"
+  - "\u3072\u307E\u306A\u3002\u308F\u3073\u3057\u3044\u3002\u843D\u3061\u3076\u308C\u305F\u3002"
+  - "\u65E5\u672C\u3072\u3084\u3002\u3064\u3081\u305F\u3044\u98F2\u307F\u7269\u3002\u3064\u3081\u305F\u3044\u304A\u9152\u306A\u3069\u3002"
+  stroke: 7
+  strokePart: 2
+  strokeOther: 5
+  schoolGrade: "\u5C0F\u5B66\u6821\uFF14\u5E74\u751F"
+  kankenGrade: 70
+  category: "\u6559\u80B2\u6F22\u5B57\u5E38\u7528\u6F22\u5B57\u540D\u524D\u306B\u4F7F\u3048\u308B\u6F22\u5B57"
