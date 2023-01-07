@@ -25,7 +25,7 @@ public class TsukuriCardModel
 
             if(UnityEngine.Random.Range(0,3) > 1){ // 1/3の確率で
                 int Length = GameObject.Find("Bushu").GetComponent<BushuCardView>().MyTsukuriUnique.Length-1;
-Debug.Log(Length);
+// Debug.Log(Length);
                 TsukuriUnique = GameObject.Find("Bushu").GetComponent<BushuCardView>().MyTsukuriUnique[UnityEngine.Random.Range(0,Length)];
             }else{
                 TsukuriUnique = ReadKanjiCSV.instance.getKanjiCSV((Randam),6);
