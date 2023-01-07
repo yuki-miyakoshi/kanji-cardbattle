@@ -157,7 +157,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.gametsukurou.kanjipittan
     Standalone: com.DefaultCompany.2DProject
-    iPhone: com.game-tsukurou.kanjipittan
+    iPhone: com.game-tsukurou.kanji-pittan
   buildNumber:
     Standalone: 0
     iPhone: 0
