@@ -23,10 +23,13 @@ public class GameManager : MonoBehaviour
     public string KanjiUnique,KanjiKanji;
     public string timerText;
     public bool moving;
+    public int KanjiCount;
+    public float RemainingTime = 30;
 
-    private bool beingMeasured; // 計測中であることを表す変数
-    private float start; // 計測の開始時間を格納する変数
-    private float elapsedTime; // 経過時間を格納する変数
+    public bool beingMeasured; // 計測中であることを表す変数
+    public float start; // 計測の開始時間を格納する変数
+    public float elapsedTime; // 経過時間を格納する変数
+
     private Rigidbody2D rb = null;
 
 
@@ -67,9 +70,9 @@ public class GameManager : MonoBehaviour
             countBushuID++;
             doNextBushu = false;
         }
-        if( int.Parse( GameObject.Find("myscore").GetComponent<Text>().text ) > 9){
-            SceneManager.LoadScene("newresultScene");
-        }
+        // if( int.Parse( GameObject.Find("myscore").GetComponent<Text>().text ) > 9){
+        //     SceneManager.LoadScene("newresultScene");
+        // }
         if (!beingMeasured){
             beingMeasured = !beingMeasured;
             start = Time.time; // 開始時間を格納
@@ -78,12 +81,22 @@ public class GameManager : MonoBehaviour
             timerText = elapsedTime.ToString("0");
         }
 
+        RemainingTime = 30.0f - elapsedTime;
+
+        GameObject.Find("timer").GetComponent<Text>().text = RemainingTime.ToString("0");
+
+        if(RemainingTime < 0f){
+            SceneManager.LoadScene("newresultScene");
+        }
+
+
     }
 
     public void SetNewKanji(string kanjiUnique){
  
         CardController kanjiCard = Instantiate(kanjiCardPrefab, kanjiField);
         kanjiCard.KanjiInit(kanjiUnique);
+        KanjiCount++;
         rb = kanjiCard.GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2( UnityEngine.Random.Range(-1.5f,1.5f),1.0f);
         rb.gravityScale = 0.1f;

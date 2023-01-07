@@ -49,15 +49,18 @@ public class TsukuriCardView : MonoBehaviour
                 
                 if( target1.GetComponent<BushuCardView>().MyTsukuriUnique.Contains(TsukuriUnique) == true){
                     rb.velocity = new Vector2( 0,0);
-                    GameObject.Find("myscore").GetComponent<Text>().text = ( int.Parse(GameObject.Find("myscore").GetComponent<Text>().text) + Power ).ToString();
-Debug.Log("kanjiUnique="+ReadKanjiCSV.instance.getBushuAndTsukuriToKanji_Unique(target1.GetComponent<BushuCardView>().BushuUnique,TsukuriUnique));
-Debug.Log("TsukuriUnique="+TsukuriUnique);
-Debug.Log("BushuUnique="+target1.GetComponent<BushuCardView>().BushuUnique);
+                    GameObject.Find("myscore").GetComponent<Text>().text = (int.Parse(GameObject.Find("myscore").GetComponent<Text>().text)+1).ToString();
+// Debug.Log("kanjiUnique="+ReadKanjiCSV.instance.getBushuAndTsukuriToKanji_Unique(target1.GetComponent<BushuCardView>().BushuUnique,TsukuriUnique));
+// Debug.Log("TsukuriUnique="+TsukuriUnique);
+// Debug.Log("BushuUnique="+target1.GetComponent<BushuCardView>().BushuUnique);
                     SetNewKanji(ReadKanjiCSV.instance.getBushuAndTsukuriToKanji_Unique(target1.GetComponent<BushuCardView>().BushuUnique,TsukuriUnique));
                     SetNextTsukuri();
+
+                    GameManager.instance.elapsedTime -= 5.0f;
+
                 }else{
                     Instantiate(particle, new Vector2( -1.2f,0.5f), Quaternion.identity);
-                    StartCoroutine(DelayMethod(10.0f, () =>{
+                    StartCoroutine(DelayMethod(5.0f, () =>{
                         SetNextTsukuri();
                     }));
                 }

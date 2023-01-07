@@ -144,7 +144,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIobj: {fileID: 3976743266066463771}
   doStart: 1
-  countTime: 10
+  TsukuricountTime: 3
+  BushucountTime: 5
   isBushu: 0
 --- !u!114 &5090416102318603063
 MonoBehaviour:
@@ -192,7 +193,6 @@ MonoBehaviour:
   CardID: 0
   TsukuriUnique: 
   Power: 0
-  speed: 0.8
   inactive: 0
   particle: {fileID: 5754080607206869917, guid: 6430ae246cc9e4d638130a7e0bd48416, type: 3}
 --- !u!114 &2545089697457865045
@@ -680,7 +680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2070331906000883559
 RectTransform:
   m_ObjectHideFlags: 0

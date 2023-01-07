@@ -23,7 +23,7 @@ public class BushuCardModel
             KanjiRank = int.Parse(ReadKanjiCSV.instance.getKanjiCSV((Randam),11));
             
         }
-Debug.Log(KanjiRank);
+// Debug.Log(KanjiRank);
         BushuUnique = ReadKanjiCSV.instance.getKanjiCSV((Randam),4);
 
         MyTsukuriUnique = ReadKanjiCSV.instance.getBushuToTsukuri_Unique(BushuUnique);

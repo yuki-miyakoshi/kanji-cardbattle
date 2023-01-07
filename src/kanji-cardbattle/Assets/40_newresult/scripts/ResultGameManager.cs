@@ -17,8 +17,8 @@ public class ResultGameManager : MonoBehaviour
  
     void Start()
     {
-        GameObject.Find("time").GetComponent<Text>().text = GameManager.instance.timerText;
-        GameObject.Find("count").GetComponent<Text>().text = (GameManager.instance.countTsukuriID+1).ToString();
+        // GameObject.Find("time").GetComponent<Text>().text = GameManager.instance.timerText;
+        GameObject.Find("KanjiCount").GetComponent<Text>().text = (GameManager.instance.KanjiCount).ToString();
     }
 
 

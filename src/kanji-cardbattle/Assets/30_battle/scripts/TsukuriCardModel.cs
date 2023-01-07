@@ -25,19 +25,21 @@ public class TsukuriCardModel
 
             if(UnityEngine.Random.Range(0,3) > 1){ // 1/3の確率で
                 int Length = GameObject.Find("Bushu").GetComponent<BushuCardView>().MyTsukuriUnique.Length-1;
+Debug.Log(Length);
                 TsukuriUnique = GameObject.Find("Bushu").GetComponent<BushuCardView>().MyTsukuriUnique[UnityEngine.Random.Range(0,Length)];
             }else{
                 TsukuriUnique = ReadKanjiCSV.instance.getKanjiCSV((Randam),6);
             }
             
 
-            //作りが被っていたら変更します。
-            while( GameObject.Find(TsukuriUnique) != null ){
-                Randam = UnityEngine.Random.Range(1, ReadKanjiCSV.instance.getListCount());
-                TsukuriUnique = ReadKanjiCSV.instance.getKanjiCSV(Randam,6);
-            }
-            
+            // //作りが被っていたら変更します。
+            // while( GameObject.Find(TsukuriUnique) != null ){
+            //     Randam = UnityEngine.Random.Range(1, ReadKanjiCSV.instance.getListCount());
+            //     TsukuriUnique = ReadKanjiCSV.instance.getKanjiCSV(Randam,6);
+            // }
+        Randam = UnityEngine.Random.Range(0, ReadKanjiCSV.instance.getListCount());
         KanjiRank = int.Parse(ReadKanjiCSV.instance.getKanjiCSV((Randam),11));
+        
 
         }
         // GameObject.name = TsukuriUnique;
