@@ -30,6 +30,7 @@ public class timeClock : MonoBehaviour {
       }
       if( isBushu ){
         // if(GameObject.Find("GameObject").GetComponent<GameManager>().isMoving){
+          
           GameManager.instance.doNextBushu = true;
           gameObject.SetActive (false);
         // }

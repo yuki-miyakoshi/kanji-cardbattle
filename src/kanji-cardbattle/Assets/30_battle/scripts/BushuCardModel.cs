@@ -7,6 +7,7 @@ public class BushuCardModel
 {
     public int CardID;
     public int Randam;
+    public int KanjiRank;
     public string[] MyTsukuriUnique;
     public string[] MyKanjiUnique;
     public string BushuText;
@@ -14,10 +15,15 @@ public class BushuCardModel
 
     public BushuCardModel(int cardID)
     {
-        Randam = UnityEngine.Random.Range(1, ReadKanjiCSV.instance.getMAXBushuToTsukuri_Unique());
-        while(ReadKanjiCSV.instance.getKanjiCSV((Randam),4) == null){
-            Randam = UnityEngine.Random.Range(1, ReadKanjiCSV.instance.getMAXBushuToTsukuri_Unique());
+        Randam = UnityEngine.Random.Range(0,ReadKanjiCSV.instance.getListCount());
+        KanjiRank = int.Parse(ReadKanjiCSV.instance.getKanjiCSV((Randam),11));
+
+        while(KanjiRank == 110 || KanjiRank < 19){
+            Randam = UnityEngine.Random.Range(0,ReadKanjiCSV.instance.getListCount());
+            KanjiRank = int.Parse(ReadKanjiCSV.instance.getKanjiCSV((Randam),11));
+            
         }
+Debug.Log(KanjiRank);
         BushuUnique = ReadKanjiCSV.instance.getKanjiCSV((Randam),4);
 
         MyTsukuriUnique = ReadKanjiCSV.instance.getBushuToTsukuri_Unique(BushuUnique);

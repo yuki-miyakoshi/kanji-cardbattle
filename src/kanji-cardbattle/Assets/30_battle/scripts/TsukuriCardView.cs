@@ -38,6 +38,7 @@ public class TsukuriCardView : MonoBehaviour
     public void OnClickCombineCard(){
 
         if(inactive == false){
+            GameManager.instance.moving = true;
             CardPos = transform.position;
             MyField = GameObject.Find("enemyfield").transform.position;
             inactive = true;
@@ -60,6 +61,8 @@ Debug.Log("BushuUnique="+target1.GetComponent<BushuCardView>().BushuUnique);
                         SetNextTsukuri();
                     }));
                 }
+                    GameManager.instance.moving = false;
+                
 
             }));
         }
@@ -67,6 +70,7 @@ Debug.Log("BushuUnique="+target1.GetComponent<BushuCardView>().BushuUnique);
 
     private void SetNextTsukuri(){
         GetComponent<CardController>().TsukuriInit(GameManager.instance.countTsukuriID);
+        
         GameManager.instance.countTsukuriID++;
         transform.position = CardPos;
         rb.velocity = new Vector2( 0,0);

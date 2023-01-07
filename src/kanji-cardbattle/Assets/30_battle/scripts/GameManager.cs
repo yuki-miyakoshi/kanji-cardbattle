@@ -22,11 +22,14 @@ public class GameManager : MonoBehaviour
     public int KanjiID = 0;
     public string KanjiUnique,KanjiKanji;
     public string timerText;
+    public bool moving;
 
     private bool beingMeasured; // 計測中であることを表す変数
     private float start; // 計測の開始時間を格納する変数
     private float elapsedTime; // 経過時間を格納する変数
     private Rigidbody2D rb = null;
+
+
 
     public void Awake(){
         if(instance == null)
@@ -48,7 +51,7 @@ public class GameManager : MonoBehaviour
         for(int i = 0; i < 5; i++){
         CardController tsukuriCard = Instantiate(tsukuriCardPrefab, cardField);
         tsukuriCard.TsukuriInit(i);
-        tsukuriCard.name = tsukuriCard.GetComponent<TsukuriCardView>().TsukuriUnique;
+        // tsukuriCard.name = tsukuriCard.GetComponent<TsukuriCardView>().TsukuriUnique;
         countTsukuriID++;
         }
 
@@ -57,7 +60,7 @@ public class GameManager : MonoBehaviour
 
     void Update(){
 
-        if(doNextBushu == true){
+        if((doNextBushu == true) && !moving){
             CardController bushuCard = Instantiate(bushuCardPrefab, themeField);
             bushuCard.BushuInit(countBushuID);
             bushuCard.name = "Bushu";

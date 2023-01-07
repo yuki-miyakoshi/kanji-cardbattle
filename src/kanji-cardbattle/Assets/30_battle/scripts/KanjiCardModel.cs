@@ -14,7 +14,7 @@ public class KanjiCardModel
 
         KanjiUnique_ = KanjiUnique;
 
-        Kanji_ = ReadKanjiCSV.instance.getKanjiCSV(int.Parse(KanjiUnique),1);
+        Kanji_ = ReadKanjiCSV.instance.getKanjiCSV(int.Parse(KanjiUnique)-1,1);
 
         KanjiID_++;
     }
