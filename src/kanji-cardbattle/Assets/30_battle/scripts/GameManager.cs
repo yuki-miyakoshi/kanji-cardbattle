@@ -70,9 +70,11 @@ public class GameManager : MonoBehaviour
             countBushuID++;
             doNextBushu = false;
         }
+
         // if( int.Parse( GameObject.Find("myscore").GetComponent<Text>().text ) > 9){
         //     SceneManager.LoadScene("newresultScene");
         // }
+
         if (!beingMeasured){
             beingMeasured = !beingMeasured;
             start = Time.time; // 開始時間を格納
