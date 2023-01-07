@@ -26,9 +26,14 @@ public class TsukuriCardModel
         //作りが被っていたら変更します。
         while( GameObject.Find(TsukuriUnique) != null ){
             Randam = UnityEngine.Random.Range(1, ReadKanjiCSV.instance.getListCount());
-            TsukuriUnique = ReadKanjiCSV.instance.getKanjiCSV(Randam,4);
+            TsukuriUnique = ReadKanjiCSV.instance.getKanjiCSV(Randam,6);
         }
-
+                while(ReadKanjiCSV.instance.getKanjiCSV((Randam),5) == null){
+            Randam = UnityEngine.Random.Range(1, ReadKanjiCSV.instance.getListCount());
+        }
+                while(ReadKanjiCSV.instance.getKanjiCSV((Randam),5) == null){
+            Randam = UnityEngine.Random.Range(1, ReadKanjiCSV.instance.getListCount());
+        }
         TsukuriText = ReadKanjiCSV.instance.getKanjiCSV(Randam,5);
         CardID = cardID;
         Power = UnityEngine.Random.Range(1, 5);
