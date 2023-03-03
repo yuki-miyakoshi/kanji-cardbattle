@@ -14,10 +14,6 @@ public class MakeList : MonoBehaviour
     {
         ShowTable(kanjiID);
     }
-    void Start()
-    {
-        SizeChange(column1,column2);
-    }
     void ShowTable(int kanjiID)
     {
         // 読み込み
@@ -49,7 +45,6 @@ public class MakeList : MonoBehaviour
                 content.alignment = TextAnchor.MiddleCenter;
             }
         }
-
     }
     void ShowTitle(string kanji)
     {
@@ -78,19 +73,5 @@ public class MakeList : MonoBehaviour
             }
         }
         return phrase;
-    }
-    void SizeChange(GameObject column1, GameObject column2) //column1
-    {
-        Component[] colomn1Comp = column1.GetComponentsInChildren<RectTransform>();
-        Component[] colomn2Comp = column2.GetComponentsInChildren<RectTransform>();
-        // float sum = 0;
-        for(int i = 0; i < colomn2Comp.Length; i++)
-        {
-            Vector2 sd1 = colomn1Comp[i].GetComponent<RectTransform>().sizeDelta;
-            Vector2 sd2 = colomn2Comp[i].GetComponent<RectTransform>().sizeDelta;
-            sd1.y = sd2.y;
-            // sum += sd.y;
-            colomn1Comp[i].GetComponent<RectTransform>().sizeDelta = sd1;
-        }
     }
 }
