@@ -25,11 +25,16 @@ public class LineUpRow : MonoBehaviour
         // float sum = 0;
         for(int i = 0; i < colomn2Comp.Length; i++)
         {
-            Vector2 sd1 = colomn1Comp[i].GetComponent<RectTransform>().sizeDelta;
-            Vector2 sd2 = colomn2Comp[i].GetComponent<RectTransform>().sizeDelta;
-            sd1.y = sd2.y;
-            // sum += sd.y;
-            colomn1Comp[i].GetComponent<RectTransform>().sizeDelta = sd1;
+            RectTransform column1RTf = colomn1Comp[i].GetComponent<RectTransform>();
+            RectTransform column2RTf = colomn2Comp[i].GetComponent<RectTransform>();
+
+            // column2のy座標を設定
+            float y = column2RTf.sizeDelta.y + 50;
+            column2RTf.anchoredPosition = new Vector2(column2RTf.anchoredPosition.x, y);
+            // 高さをそろえる
+            column1RTf.sizeDelta = new Vector2(column1RTf.sizeDelta.x, column2RTf.sizeDelta.y);
+            // y座標をそろえる
+            column1RTf.anchoredPosition = new Vector2(column1RTf.anchoredPosition.x, column2RTf.anchoredPosition.y);
         }
     }
 }
